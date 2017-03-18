@@ -1,0 +1,13 @@
+import requests
+
+url = "https://api.evasrv.com/email_validate/"
+
+payload = "email=test%40domain.com&user_API_token=YOUR-EV-API-TOKEN&="
+headers = {
+    'cache-control': "no-cache",
+    'content-type': "application/x-www-form-urlencoded"
+    }
+
+response = requests.request("POST", url, data=payload, headers=headers)
+
+print(response.text)
